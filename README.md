@@ -5,7 +5,7 @@
 
 ## Introduction
 
-This project make use of Semantic Segmentation to create a click to drive robot. The sensors used is 
+This project make use of Semantic Segmentation to create a click to drive robot. The robot is implemented using only monocular cameras.
 
 The segmentation of the project uses MMSegmentation, an open source semantic segmentation toolbox based on PyTorch.
 It is a part of the OpenMMLab project.
@@ -111,10 +111,11 @@ We appreciate all contributions to improve MMSegmentation. Please refer to [CONT
 
 ## Acknowledgement
 
-MMSegmentation is an open source project that welcome any contribution and feedback.
-We wish that the toolbox and benchmark could serve the growing research
-community by providing a flexible as well as standardized toolkit to reimplement existing methods
-and develop their own new semantic segmentation methods.
+This project is make use of MMSegmentation created by MMSegmentation Contributors. 
+The original project can be found at https://github.com/open-mmlab/mmsegmentation.
+We would like to thank the original authors of MMSegmentation for creating this project.
+
+In addition, the project is made possible my NP Final Year Project Supervisor and TSO Staff.
 
 ## Projects in OpenMMLab
 
