@@ -1,31 +1,22 @@
-## Prerequisites
+## Prerequisites (Tested)
+The following are some requirements that is tested for this program.
 
-- Linux or macOS (Windows is in experimental support)
+- Linux Ubuntu 18.04
 - Python 3.6+
-- PyTorch 1.3+
-- CUDA 9.2+ (If you build PyTorch from source, CUDA 9.0 is also compatible)
+- PyTorch 1.8.0
+- CUDA 11.1.1
+- mmcv-full 1.3.9
 - GCC 5+
-- [MMCV](https://mmcv.readthedocs.io/en/latest/#installation)
-
-The compatible MMSegmentation and MMCV versions are as below. Please install the correct version of MMCV to avoid installation issues.
-
-| MMSegmentation version |    MMCV version     |
-|:-------------------:|:-------------------:|
-| master              | mmcv-full>=1.3.1, <1.4.0 |
-| 0.13.0              | mmcv-full>=1.3.1, <1.4.0 |
-| 0.12.0              | mmcv-full>=1.1.4, <1.4.0 |
-| 0.11.0              | mmcv-full>=1.1.4, <1.3.0 |
-| 0.10.0              | mmcv-full>=1.1.4, <1.3.0 |
-| 0.9.0               | mmcv-full>=1.1.4, <1.3.0 |
-| 0.8.0               | mmcv-full>=1.1.4, <1.2.0 |
-| 0.7.0               | mmcv-full>=1.1.2, <1.2.0 |
-| 0.6.0               | mmcv-full>=1.1.2, <1.2.0 |
-
-Note: You need to run `pip uninstall mmcv` first if you have mmcv installed.
-If mmcv and mmcv-full are both installed, there will be `ModuleNotFoundError`.
 
 ## Installation
 
+a. Create a conda virtual environment and install the relevant dependencies.
+```shell
+git clone  https://github.com/zhengjie6/fyp-segmentationbot.git
+cd fyp-segmentationbot/requirements
+
+conda env create -f mmseg.yml
+```
 a. Create a conda virtual environment and activate it.
 
 ```shell
