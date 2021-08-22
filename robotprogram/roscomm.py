@@ -31,7 +31,6 @@ def moveforward():
     vel_pub.publish(forward_cmd)  # publish to cmd_vel topic
 
 
-
 def turnleft():
     turn_cmd = Twist()
     turn_cmd.linear.x = 0.0  # speed in linear x direction in m/s
@@ -75,6 +74,7 @@ def stop():
     # publish
     rospy.loginfo(stop_cmd)  # log and print the cmd_vel
     vel_pub.publish(stop_cmd)  # publish to cmd_vel topic
+
 
 def euler_from_quaternion(x, y, z, w):
     t0 = +2.0 * (w * x + y * z)
