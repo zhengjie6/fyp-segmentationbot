@@ -35,3 +35,7 @@ Using your browser, open the `client.html` script.
 Most browser should be able to run this. Tested browser includes:
 - Mozilla Firefox
 - Google Chrome
+
+A picture of the client is shown below.
+
+![demo image](./demo.JPG)
