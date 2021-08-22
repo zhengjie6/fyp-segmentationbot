@@ -3,21 +3,11 @@
 </div>
 <br />
 
-[![PyPI](https://img.shields.io/pypi/v/mmsegmentation)](https://pypi.org/project/mmsegmentation)
-[![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmsegmentation.readthedocs.io/en/latest/)
-[![badge](https://github.com/open-mmlab/mmsegmentation/workflows/build/badge.svg)](https://github.com/open-mmlab/mmsegmentation/actions)
-[![codecov](https://codecov.io/gh/open-mmlab/mmsegmentation/branch/master/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmsegmentation)
-[![license](https://img.shields.io/github/license/open-mmlab/mmsegmentation.svg)](https://github.com/open-mmlab/mmsegmentation/blob/master/LICENSE)
-[![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmsegmentation.svg)](https://github.com/open-mmlab/mmsegmentation/issues)
-[![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmsegmentation.svg)](https://github.com/open-mmlab/mmsegmentation/issues)
-
-Documentation: https://mmsegmentation.readthedocs.io/
-
-English | [简体中文](README_zh-CN.md)
-
 ## Introduction
 
-MMSegmentation is an open source semantic segmentation toolbox based on PyTorch.
+This project make use of Semantic Segmentation to create a click to drive robot. The robot is implemented using only monocular cameras.
+
+The segmentation of the project uses MMSegmentation, an open source semantic segmentation toolbox based on PyTorch.
 It is a part of the OpenMMLab project.
 
 The master branch works with **PyTorch 1.3+**.
@@ -121,10 +111,11 @@ We appreciate all contributions to improve MMSegmentation. Please refer to [CONT
 
 ## Acknowledgement
 
-MMSegmentation is an open source project that welcome any contribution and feedback.
-We wish that the toolbox and benchmark could serve the growing research
-community by providing a flexible as well as standardized toolkit to reimplement existing methods
-and develop their own new semantic segmentation methods.
+This project is make use of MMSegmentation created by MMSegmentation Contributors. 
+The original project can be found at https://github.com/open-mmlab/mmsegmentation.
+We would like to thank the original authors of MMSegmentation for creating this project.
+
+In addition, the project is made possible my NP Final Year Project Supervisor and TSO Staff.
 
 ## Projects in OpenMMLab
 
