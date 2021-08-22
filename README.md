@@ -5,11 +5,14 @@
 This project make use of Semantic Segmentation to create a click to drive robot. The robot is implemented using only monocular cameras.
 
 The segmentation of the project uses MMSegmentation, an open source semantic segmentation toolbox based on PyTorch.
-It is a part of the OpenMMLab project.
+It is a part of the OpenMMLab project. In addition, the distance algorithm of the robot makes used of homographic transformation algorithm and the robot control makes use of Robot Operating System (ROS).
 
-The master branch works with **PyTorch 1.3+**.
+The master branch works with **PyTorch 1.3+** and the ROS on the segmentation computer is **ROS Melodic**.
 
+You may read the report of this project at [this link](https://drive.google.com/file/d/1lnmtmhn0mRjQqjQMD1tPpiQRdENOSLKn/view?usp=sharing).
 ![demo image](resources/seg_demo.gif)
+
+
 
 ### Major features
 
