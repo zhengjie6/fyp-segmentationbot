@@ -20,7 +20,7 @@ This project has 3 main parts: Segmentation of Ground Images using the MMSegment
 The key objective is to obtain a clear segmentation of ground level images using a deep learning based solution. For this task, creation and training of custom dataset is done to allow for the segmentation to be accurate. This is so that by using only monocular cameras, the autonomous robot can detect obstacles in its path of travel.
 
 ### Estimation of Distance of a Point from Robot
-The key objective is to transform camera coordinate to real world coordinates
+The key objective is to transform camera coordinate to real world coordinates. This will allow the robot to obtain its distance and heading from a particular point 
 
 
 ## Installation
