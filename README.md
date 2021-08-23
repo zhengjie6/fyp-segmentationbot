@@ -16,10 +16,10 @@ You may read the report of this project at [this link](https://drive.google.com/
 
 This project has 3 main parts: Segmentation of Ground Images using the MMSegmentation Library, Estimation of Distance of a Point from a Robot and Robot Control Algorithm. The final product is click-to-drive robot that can drive to a particular location when the use selects a point.
 
-# Segmentation of Ground Images
+### Segmentation of Ground Images
 The key objective is to obtain a clear segmentation of ground level images using a deep learning based solution. For this task, creation and training of custom dataset is done to allow for the segmentation to be accurate. This is so that by using only monocular cameras, the autonomous robot can detect obstacles in its path of travel.
 
-# Estimation of Distance of a Point from Robot
+### Estimation of Distance of a Point from Robot
 The key objective is to transform camera coordinate to real world coordinates
 
 
