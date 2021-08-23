@@ -12,73 +12,16 @@ The master branch works with **PyTorch 1.3+** and the ROS on the segmentation co
 You may read the report of this project at [this link](https://drive.google.com/file/d/1lnmtmhn0mRjQqjQMD1tPpiQRdENOSLKn/view?usp=sharing).
 ![demo image](resources/seg_demo.gif)
 
+## System Overview
 
+This project has 3 main parts: Segmentation of Ground Images using the MMSegmentation Library, Estimation of Distance of a Point from a Robot and Robot Control Algorithm. The final product is click-to-drive robot that can drive to a particular location when the use selects a point.
 
-### Major features
+# Segmentation of Ground Images
+The key objective is to obtain a clear segmentation of ground level images using a deep learning based solution. For this task, creation and training of custom dataset is done to allow for the segmentation to be accurate. This is so that by using only monocular cameras, the autonomous robot can detect obstacles in its path of travel.
 
-- **Unified Benchmark**
+# Estimation of Distance of a Point from Robot
+The key objective is to transform camera coordinate to real world coordinates
 
-  We provide a unified benchmark toolbox for various semantic segmentation methods.
-
-- **Modular Design**
-
-  We decompose the semantic segmentation framework into different components and one can easily construct a customized semantic segmentation framework by combining different modules.
-
-- **Support of multiple methods out of box**
-
-  The toolbox directly supports popular and contemporary semantic segmentation frameworks, *e.g.* PSPNet, DeepLabV3, PSANet, DeepLabV3+, etc.
-
-- **High efficiency**
-
-  The training speed is faster than or comparable to other codebases.
-
-## License
-
-This project is released under the [Apache 2.0 license](LICENSE).
-
-## Changelog
-
-v0.13.0 was released in 05/05/2021.
-Please refer to [changelog.md](docs/changelog.md) for details and release history.
-
-## Benchmark and model zoo
-
-Results and models are available in the [model zoo](docs/model_zoo.md).
-
-Supported backbones:
-
-- [x] ResNet (CVPR'2016)
-- [x] ResNeXt (CVPR'2017)
-- [x] [HRNet (CVPR'2019)](configs/hrnet/README.md)
-- [x] [ResNeSt (ArXiv'2020)](configs/resnest/README.md)
-- [x] [MobileNetV2 (CVPR'2018)](configs/mobilenet_v2/README.md)
-- [x] [MobileNetV3 (ICCV'2019)](configs/mobilenet_v3/README.md)
-
-Supported methods:
-
-- [x] [FCN (CVPR'2015/TPAMI'2017)](configs/fcn)
-- [x] [UNet (MICCAI'2016/Nat. Methods'2019)](configs/unet)
-- [x] [PSPNet (CVPR'2017)](configs/pspnet)
-- [x] [DeepLabV3 (ArXiv'2017)](configs/deeplabv3)
-- [x] [Mixed Precision (FP16) Training (ArXiv'2017)](configs/fp16/README.md)
-- [x] [PSANet (ECCV'2018)](configs/psanet)
-- [x] [DeepLabV3+ (CVPR'2018)](configs/deeplabv3plus)
-- [x] [UPerNet (ECCV'2018)](configs/upernet)
-- [x] [NonLocal Net (CVPR'2018)](configs/nonlocal_net)
-- [x] [EncNet (CVPR'2018)](configs/encnet)
-- [x] [Semantic FPN (CVPR'2019)](configs/sem_fpn)
-- [x] [DANet (CVPR'2019)](configs/danet)
-- [x] [APCNet (CVPR'2019)](configs/apcnet)
-- [x] [EMANet (ICCV'2019)](configs/emanet)
-- [x] [CCNet (ICCV'2019)](configs/ccnet)
-- [x] [DMNet (ICCV'2019)](configs/dmnet)
-- [x] [ANN (ICCV'2019)](configs/ann)
-- [x] [GCNet (ICCVW'2019/TPAMI'2020)](configs/gcnet)
-- [x] [Fast-SCNN (ArXiv'2019)](configs/fastscnn)
-- [x] [OCRNet (ECCV'2020)](configs/ocrnet)
-- [x] [DNLNet (ECCV'2020)](configs/dnlnet)
-- [x] [PointRend (CVPR'2020)](configs/point_rend)
-- [x] [CGNet (TIP'2020)](configs/cgnet)
 
 ## Installation
 
