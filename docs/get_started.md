@@ -47,7 +47,7 @@ By running `pip install -e.`, it installs all minimally required dependencies. T
 d. Install ROS and Other ROS related dependencies
 This step is optional, but good to have for ease of troubleshooting. The segmentation computer only requires `rospkg==1.3.0` (installed when running step a) as it only needs to publish and subscribe to ros topics. However, having ROS installed will provide access to developing ros packages in the same computer. InstallingROS debugging tools such as RVIZ may also be useful for debugging.
 
-Follow the instructions at [ROS PAGE] (http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS Melodic (for Ubuntu 18.04).
+Follow the instructions at [ROS PAGE](http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS Melodic (for Ubuntu 18.04).
 
 
 ## Verification (Credits: MMSegmentation)
