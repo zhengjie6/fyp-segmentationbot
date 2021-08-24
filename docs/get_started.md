@@ -17,7 +17,7 @@ Hardware requirements (Recommended)
 
 ## Installation
 
-a. Create a conda virtual environment and install the relevant dependencies.
+#### a. Create a conda virtual environment and install the relevant dependencies.
 Most of the dependencies should be automatically installed. (You may encourter installation issue with mmcv-full)
 You may choose to use other version accordingly.
 ```shell
@@ -28,12 +28,12 @@ conda env create -f mmseg.yml
 conda active mmseg
 ```
 
-b. Install mmcv-full for Linux
+#### b. Install mmcv-full for Linux
 ```shell
 pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 ```
 
-c. Install relevant dependencies and make data directory
+#### c. Install relevant dependencies and make data directory
 ```shell
 cd mmsegmentation
 pip install -e .  # or "python setup.py develop"
@@ -44,7 +44,7 @@ ln -s $DATA_ROOT data
 Note:
 By running `pip install -e.`, it installs all minimally required dependencies. To use optional dependencies like `cityscapessripts`  either install them manually with `pip install -r requirements/optional.txt` or specify desired extras when calling `pip` (e.g. `pip install -e .[optional]`). Valid keys for the extras field are: `all`, `tests`, `build`, and `optional`.
 
-d. Install ROS and Other ROS related dependencies
+#### d. Install ROS and Other ROS related dependencies
 This step is optional, but good to have for ease of troubleshooting. The segmentation computer only requires `rospkg==1.3.0` (installed when running step a) as it only needs to publish and subscribe to ros topics. However, having ROS installed will provide access to developing ros packages in the same computer. InstallingROS debugging tools such as RVIZ may also be useful for debugging.
 
 Follow the instructions at [ROS PAGE](http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS Melodic (for Ubuntu 18.04).
