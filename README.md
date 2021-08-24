@@ -20,7 +20,10 @@ This project has 3 main parts: Segmentation of Ground Images using the MMSegment
 The key objective is to obtain a clear segmentation of ground level images using a deep learning based solution. For this task, creation and training of custom dataset is done to allow for the segmentation to be accurate. This is so that by using only monocular cameras, the autonomous robot can detect obstacles in its path of travel.
 
 ### Estimation of Distance of a Point from Robot
-The key objective is to transform camera coordinate to real world coordinates. This will allow the robot to obtain its distance and heading from a particular point 
+The key objective is to transform camera coordinate to real world coordinates. This will allow the robot to obtain its distance and heading from a particular point and know how much to move.
+
+### Robot Control Algorithm
+The key objective is to control the robot movement. This is done by building a hardware robot for testing. By using ROS as the main system, the robot control alogorithm consist of 2 parts, ROS running on the robot computer and ROS running on the segmentation computer. Both ROS system communicate over TCP/IP. Details on how to setup the robot can be found at [this tutorial].
 
 
 ## Installation
