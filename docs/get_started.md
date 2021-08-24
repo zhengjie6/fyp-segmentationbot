@@ -1,157 +1,56 @@
 ## Prerequisites (Tested)
-The following are some requirements that is tested for this program.
+The following are some software requirements that is tested for this program.
 
-- Linux Ubuntu 18.04
+- Linux Ubuntu 18.04 (Windows not recommended)
 - Python 3.6+
 - PyTorch 1.8.0
 - CUDA 11.1.1
 - mmcv-full 1.3.9
 - GCC 5+
 
+Hardware requirements (Recommended)
+
+- Intel Core i5 8th Gen or higer
+- 16GB DDR4 RAM or higher
+- NVIDIA GeForce RTX2070 or higher (Recommended to get GPU of larger VRAM to train with large crop size. Older GPU may still work but not as well.)
+- 512GB SSD
+
 ## Installation
 
 a. Create a conda virtual environment and install the relevant dependencies.
+Most of the dependencies should be automatically installed. (You may encourter installation issue with mmcv-full)
+You may choose to use other version accordingly.
 ```shell
 git clone  https://github.com/zhengjie6/fyp-segmentationbot.git
 cd fyp-segmentationbot/requirements
 
 conda env create -f mmseg.yml
-```
-a. Create a conda virtual environment and activate it.
-
-```shell
-conda create -n open-mmlab python=3.7 -y
-conda activate open-mmlab
+conda active mmseg
 ```
 
-b. Install PyTorch and torchvision following the [official instructions](https://pytorch.org/).
-Here we use PyTorch 1.6.0 and CUDA 10.1.
-You may also switch to other version by specifying the version number.
-
+b. Install mmcv-full for Linux
 ```shell
-conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
+pip install mmcv-full==1.3.9 -f https://download.openmmlab.com/mmcv/dist/cu111/torch1.8.0/index.html
 ```
 
-c. Install [MMCV](https://mmcv.readthedocs.io/en/latest/) following the [official instructions](https://mmcv.readthedocs.io/en/latest/#installation).
-Either `mmcv` or `mmcv-full` is compatible with MMSegmentation, but for methods like CCNet and PSANet, CUDA ops in `mmcv-full` is required.
-
-**Install mmcv for Linux:**
-
-The pre-build mmcv-full (with PyTorch 1.5 and CUDA 10.1) can be installed by running: (other available versions could be found [here](https://mmcv.readthedocs.io/en/latest/#install-with-pip))
-
+c. Install relevant dependencies and make data directory
 ```shell
-pip install mmcv-full -f https://download.openmmlab.com/mmcv/dist/cu101/torch1.5.0/index.html
-```
-
-**Install mmcv for Windows (Experimental):**
-
-For Windows, the installation of MMCV requires native C++ compilers, such as cl.exe. Please add the compiler to %PATH%.
-
-A typical path for cl.exe looks like the following if you have Windows SDK and Visual Studio installed on your computer:
-
-```shell
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\VC\Tools\MSVC\14.26.28801\bin\Hostx86\x64
-```
-
-Or you should download the cl compiler from web and then set up the path.
-
-Then, clone mmcv from github and install mmcv via pip:
-
-```shell
-git clone https://github.com/open-mmlab/mmcv.git
-cd mmcv
-pip install -e .
-```
-
-Or simply:
-
-```shell
-pip install mmcv
-```
-
-Currently, mmcv-full is not supported on Windows.
-
-d. Install MMSegmentation.
-
-```shell
-pip install mmsegmentation # install the latest release
-```
-
-or
-
-```shell
-pip install git+https://github.com/open-mmlab/mmsegmentation.git # install the master branch
-```
-
-Instead, if you would like to install MMSegmentation in `dev` mode, run following
-
-```shell
-git clone https://github.com/open-mmlab/mmsegmentation.git
-cd mmsegmentation
-pip install -e .  # or "python setup.py develop"
-```
-
-Note:
-
-1. When training or testing models on Windows, please ensure that all the '\\' in paths are replaced with '/'. Add .replace('\\', '/') to your python code wherever path strings occur.
-2. The `version+git_hash` will also be saved in trained models meta, e.g. 0.5.0+c415a2e.
-3. When MMsegmentation is installed on `dev` mode, any local modifications made to the code will take effect without the need to reinstall it.
-4. If you would like to use `opencv-python-headless` instead of `opencv-python`,
-   you can install it before installing MMCV.
-5. Some dependencies are optional. Simply running `pip install -e .` will only install the minimum runtime requirements.
-   To use optional dependencies like `cityscapessripts`  either install them manually with `pip install -r requirements/optional.txt` or specify desired extras when calling `pip` (e.g. `pip install -e .[optional]`). Valid keys for the extras field are: `all`, `tests`, `build`, and `optional`.
-
-### A from-scratch setup script
-
-#### Linux
-
-Here is a full script for setting up mmsegmentation with conda and link the dataset path (supposing that your dataset path is $DATA_ROOT).
-
-```shell
-conda create -n open-mmlab python=3.7 -y
-conda activate open-mmlab
-
-conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
-pip install mmcv-full==latest+torch1.5.0+cu101 -f https://download.openmmlab.com/mmcv/dist/index.html
-git clone https://github.com/open-mmlab/mmsegmentation.git
 cd mmsegmentation
 pip install -e .  # or "python setup.py develop"
 
 mkdir data
 ln -s $DATA_ROOT data
 ```
+Note:
+By running `pip install -e.`, it installs all minimally required dependencies. To use optional dependencies like `cityscapessripts`  either install them manually with `pip install -r requirements/optional.txt` or specify desired extras when calling `pip` (e.g. `pip install -e .[optional]`). Valid keys for the extras field are: `all`, `tests`, `build`, and `optional`.
 
-#### Windows(Experimental)
+d. Install ROS and Other ROS related dependencies
+This step is optional, but good to have for ease of troubleshooting. The segmentation computer only requires `rospkg==1.3.0` (installed when running step a) as it only needs to publish and subscribe to ros topics. However, having ROS installed will provide access to developing ros packages in the same computer. InstallingROS debugging tools such as RVIZ may also be useful for debugging.
 
-Here is a full script for setting up mmsegmentation with conda and link the dataset path (supposing that your dataset path is
-%DATA_ROOT%. Notice: It must be an absolute path).
+Follow the instructions at [ROS PAGE] (http://wiki.ros.org/melodic/Installation/Ubuntu) to install ROS Melodic (for Ubuntu 18.04).
 
-```shell
-conda create -n open-mmlab python=3.7 -y
-conda activate open-mmlab
 
-conda install pytorch=1.6.0 torchvision cudatoolkit=10.1 -c pytorch
-set PATH=full\path\to\your\cpp\compiler;%PATH%
-pip install mmcv
-
-git clone https://github.com/open-mmlab/mmsegmentation.git
-cd mmsegmentation
-pip install -e .  # or "python setup.py develop"
-
-mklink /D data %DATA_ROOT%
-```
-
-#### Developing with multiple MMSegmentation versions
-
-The train and test scripts already modify the `PYTHONPATH` to ensure the script use the MMSegmentation in the current directory.
-
-To use the default MMSegmentation installed in the environment rather than that you are working with, you can remove the following line in those scripts
-
-```shell
-PYTHONPATH="$(dirname $0)/..":$PYTHONPATH
-```
-
-## Verification
+## Verification (Credits: MMSegmentation)
 
 To verify whether MMSegmentation and the required environment are installed correctly, we can run sample python codes to initialize a detector and inference a demo image:
 
@@ -182,18 +81,3 @@ for frame in video:
 ```
 
 The above code is supposed to run successfully upon you finish the installation.
-
-We also provide a demo script to test a single image.
-
-```shell
-python demo/image_demo.py ${IMAGE_FILE} ${CONFIG_FILE} ${CHECKPOINT_FILE} [--device ${DEVICE_NAME}] [--palette-thr ${PALETTE}]
-```
-
-Examples:
-
-```shell
-python demo/image_demo.py demo/demo.jpg configs/pspnet/pspnet_r50-d8_512x1024_40k_cityscapes.py \
-    checkpoints/pspnet_r50-d8_512x1024_40k_cityscapes_20200605_003338-2966598c.pth --device cuda:0 --palette cityscapes
-```
-
-A notebook demo can be found in [demo/inference_demo.ipynb](../demo/inference_demo.ipynb).
