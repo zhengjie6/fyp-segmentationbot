@@ -38,19 +38,6 @@ We also provide many [training tricks](docs/tutorials/training_tricks.md).
 
 A Colab tutorial is also provided. You may preview the notebook [here](demo/MMSegmentation_Tutorial.ipynb) or directly [run](https://colab.research.google.com/github/open-mmlab/mmsegmentation/blob/master/demo/MMSegmentation_Tutorial.ipynb) on Colab.
 
-## Citation
-
-If you find this project useful in your research, please consider cite:
-
-```latex
-@misc{mmseg2020,
-    title={{MMSegmentation}: OpenMMLab Semantic Segmentation Toolbox and Benchmark},
-    author={MMSegmentation Contributors},
-    howpublished = {\url{https://github.com/open-mmlab/mmsegmentation}},
-    year={2020}
-}
-```
-
 ## Acknowledgement
 
 This project is make use of MMSegmentation created by MMSegmentation Contributors. 
