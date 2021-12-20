@@ -18,5 +18,8 @@
 3. Once the monitor switches off, press the E-Stop switch to complete the shutdown.
 
 ### Troubleshooting
-* If ROS is unable to find the ROS Core IP at 192.168.0.2, the IP address of the Odroid is wrong (it may be connected to NPWirelessX). Use the command `ifconfig` to find out the current IP address of the system. Ensure that the router and the network switch is turn on and try to run step `5` again.
-* If the ROS is unable to detect the motor controller, a serial communication error will be displayed. Reboot the system (E-Stop). If the error still persist, check the USB connection to the Odroid and KangarooX2. 
+* Symptom: ROScore is unable to start up due to IP address issues. If ROS is unable to find the ROS Core IP at 192.168.0.2, the IP address of the Odroid is wrong (it may be connected to NPWirelessX). Use the command `ifconfig` to find out the current IP address of the system. Ensure that the router and the network switch is turn on and try to run step `5` again.
+
+* Symptom: Serial communication error displayed in terminal. If the ROS is unable to detect the motor controller, a  Reboot the system (E-Stop). If the error still persist, check the USB connection to the Odroid and KangarooX2. 
+
+* Sympton
